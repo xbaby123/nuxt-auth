@@ -27,8 +27,8 @@ export default {
   middleware: 'notAuthenticated',
   data: function () {
     return {
-      username: 'test9@mail.com',
-      password: '12345678'
+      username: '',
+      password: ''
     }
   },
   methods: {
