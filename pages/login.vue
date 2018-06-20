@@ -1,14 +1,24 @@
 
+
 <template>
   <section class="container">
     <div>
       <h1 class="title">
         login page
+        <p><nuxt-link to="/post">Blog</nuxt-link></p>
       </h1>
       <h2 class="subtitle">
         you see this beacuse you are not authenticated
+        {{firstPost}}
       </h2>
-
+      <div class="container">
+        <h2>Users</h2>
+        <ul class="users">
+          <li v-for="user in users" :key="user.id">
+            <nuxt-link :to="{ name: 'users-id', params: { id: user.id} }">{{ user.name }}</nuxt-link>
+          </li>
+        </ul>
+      </div>
       <div>
           <input type="text" v-model="username" />
           <br>
@@ -22,13 +32,35 @@
 
 <script>
 // import Cookie from 'js-cookie'
+import axios from 'axios'
 
 export default {
-  middleware: 'notAuthenticated',
+  middleware: ['notAuthenticated', 'userAgent'],
   data: function () {
     return {
       username: '',
       password: ''
+    }
+  },
+  async asyncData ({ userAgent, params }) {
+    // We can return a Promise instead of calling the callback
+    console.log('user agent in context is: ', userAgent)
+    console.log('sending request async data')
+    let posts
+
+    let { data } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    posts = data.slice(0, 5)
+
+    let response = await axios.get('https://jsonplaceholder.typicode.com/users')
+
+    return {
+      posts,
+      users: response.data.slice(0, 5)
+    }
+  },
+  computed: {
+    firstPost: function () {
+      return this.posts[0].title
     }
   },
   methods: {
