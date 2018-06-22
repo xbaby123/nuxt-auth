@@ -1,17 +1,14 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
-        This page is super secret
-      </h1>
       <h2 class="subtitle">
-        a jwt authentication with nuxt.js example
+        Form Validation
       </h2>
-
+      <p><nuxt-link to="/validate/form">Form Validation Manual</nuxt-link></p>
+      <p><nuxt-link to="/validate/plugin">Form Validation Plugin</nuxt-link></p>
       <div class="links">
-        tuserdata is :
-         {{userInfo}}
-
+        <!--tuserdata is :-->
+         <!--{{userInfo}}-->
       </div>
     </div>
   </section>
@@ -22,14 +19,14 @@
 export default {
   middleware: 'authenticated',
   computed: {
-    userInfo: function () {
-      return ` id: ${this.$store.state.user.id},
-      first name:  ${this.$store.state.user.first_name},
-      last name:  ${this.$store.state.user.last_name},
-      email:  ${this.$store.state.user.email}
-
-      `
-    }
+//    userInfo: function () {
+//      return ` id: ${this.$store.state.user.id},
+//      first name:  ${this.$store.state.user.first_name},
+//      last name:  ${this.$store.state.user.last_name},
+//      email:  ${this.$store.state.user.email}
+//
+//      `
+//    }
   }
 }
 </script>

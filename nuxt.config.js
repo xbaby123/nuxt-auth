@@ -17,6 +17,9 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: '~/components/loading.vue',
+  plugins: [
+    '~/plugins/vee-validate'
+  ],
   /*
   ** Build configuration
   */
