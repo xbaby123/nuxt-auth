@@ -6,6 +6,15 @@
       </h2>
       <p><nuxt-link to="/validate/form">Form Validation Manual</nuxt-link></p>
       <p><nuxt-link to="/validate/plugin">Form Validation Plugin</nuxt-link></p>
+      <h2 class="subtitle">
+        Posts list (Routing, Async Data)
+      </h2>
+      <p><nuxt-link to="/post">Post</nuxt-link></p>
+
+      <h2 class="subtitle">
+        End to End testing
+      </h2>
+      <p><nuxt-link to="/unit">Testing</nuxt-link></p>
       <div class="links">
         <!--tuserdata is :-->
          <!--{{userInfo}}-->
