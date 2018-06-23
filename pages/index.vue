@@ -15,6 +15,11 @@
         End to End testing
       </h2>
       <p><nuxt-link to="/unit">Testing</nuxt-link></p>
+
+      <h2 class="subtitle">
+        Bulma Css
+      </h2>
+      <p><nuxt-link to="/css">Form with bulma css</nuxt-link></p>
       <div class="links">
         <!--tuserdata is :-->
          <!--{{userInfo}}-->

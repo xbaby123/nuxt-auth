@@ -20,6 +20,10 @@ module.exports = {
   plugins: [
     '~/plugins/vee-validate'
   ],
+  css: [
+    { src: '~/assets/css/main.scss', lang: 'sass' },
+    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
+  ],
   /*
   ** Build configuration
   */
