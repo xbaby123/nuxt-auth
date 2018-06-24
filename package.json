@@ -20,6 +20,7 @@
     "test": "ava --serial --verbose"
   },
   "dependencies": {
+    "@nuxtjs/font-awesome": "^1.0.3",
     "axios": "^0.18.0",
     "bulma": "^0.7.1",
     "cookieparser": "^0.1.0",
